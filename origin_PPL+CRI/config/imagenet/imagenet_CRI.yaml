@@ -1,0 +1,55 @@
+name: imagenet
+print_freq: 100
+workers: 16
+log_dir: 'logs'
+model_dir: 'ckps'
+output_dir: 'output/cifar10/0.2_10'
+iter: 'cifar10_IF100'
+GPUS: [2,3]
+
+loss: 'CRILoss'
+s: 30
+max_m: 0.1
+gamma: 1.5
+
+scheduler: 'ppw'
+drw: 160
+ppw_min: 140
+ppw_max: 180
+ppw_alpha: 5
+
+mixup: 'ppmix'
+ppmix_epoch_min: 30
+ppmix_epoch_max: 160
+ppm_alpha: 5
+
+# dataset & model setting
+dataset: 'imagenet_CRI'
+data_path: '/home/xmj/4T/work/cvpr_lt/classifier-balancing-master/classifier-balancing-master/data/data/ImageNet/'
+num_classes: 1000
+
+backbone: 'resnet10_fe'
+resume: ''
+head_class_idx:
+  - 0
+  - 390
+med_class_idx:
+  - 390
+  - 835
+tail_class_idx:
+  - 835
+  - 1000
+
+# Train
+
+lr: 0.1
+batch_size: 256
+weight_decay: 2e-4
+num_epochs: 200
+momentum: 0.9
+cos: True
+
+alpha: 1.0
+
+
+
