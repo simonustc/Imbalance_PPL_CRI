@@ -426,7 +426,7 @@ class CRILoss(BaseLoss):
         loss = weighted_loss.sum() / weights.sum()
 
         th=50
-        self.beta=50
+        self.beta=0.5
         if self.type == "zero":
             other = torch.zeros(loss.shape).to(self.device)
             loss = torch.where(loss <= th, loss, other)
