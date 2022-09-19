@@ -80,7 +80,7 @@ Backbone network can be resnet32 for Imbalance cifar10 & cifar100, resnet10 for 
 
 ## Validation
 
-### CRI+PPW+PPmix
+### CRI+PPL
 
 `python eval.py --cfg ./config/....yaml resume /path/ckps/...pth.tar`
 
@@ -91,7 +91,7 @@ Backbone network can be resnet32 for Imbalance cifar10 & cifar100, resnet10 for 
 
 ## Results and Models
 
-### CRI+PPW+PPmix
+### CRI+PPL
 
 [Links to models](https://drive.google.com/drive/folders/1b932TjGm_-GcuN9Mq24aExk2uZK64LWy?usp=sharing)
 
