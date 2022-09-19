@@ -1,0 +1,52 @@
+name: imagenet
+print_freq: 100
+workers: 16
+log_dir: 'logs'
+model_dir: 'ckps'
+output_dir: 'output/imagenet'
+iter: 'imagenet'
+GPUS: [0,1]
+
+loss: 'CrossEntropy'
+
+scheduler: 'ppw'
+drw: 160
+ppw_min: 100
+ppw_max: 160
+ppw_alpha: 5
+
+mixup: 'ppmix'
+ppmix_epoch_min: 100
+ppmix_epoch_max: 160
+ppm_alpha: 5
+
+# dataset & model setting
+dataset: 'imagenet'
+data_path: '...'
+num_classes: 1000
+
+backbone: 'resnet10_fe'
+resume: '../ckps/model_best.pth.tar'
+head_class_idx:
+  - 0
+  - 390
+med_class_idx:
+  - 390
+  - 835
+tail_class_idx:
+  - 835
+  - 1000
+
+# Train
+
+lr: 0.1
+batch_size: 256
+weight_decay: 2e-4
+num_epochs: 200
+momentum: 0.9
+cos: True
+
+alpha: 1.0
+
+
+

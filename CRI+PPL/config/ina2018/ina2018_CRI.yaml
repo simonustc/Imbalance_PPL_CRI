@@ -1,0 +1,54 @@
+name: imagenet
+print_freq: 100
+workers: 16
+log_dir: 'logs'
+model_dir: 'ckps'
+output_dir: 'output/ina'
+iter: 'ina'
+GPUS: [0,1,2,3,4,5,6,7]
+
+loss: 'CRILoss'
+s: 30
+max_m: 0.1
+gamma: 1.5
+
+scheduler: 'ppw'
+drw: 160
+ppw_min: 100
+ppw_max: 160
+ppw_alpha: 5
+
+mixup: 'ppmix'
+ppmix_epoch_min: 100
+ppmix_epoch_max: 160
+ppm_alpha: 5
+
+# dataset & model setting
+dataset: 'ina2018_CRI'
+data_path: '...'
+num_classes: 8142
+
+backbone: 'resnet50_fe'
+resume: '../ckps/model_best.pth.tar'
+head_class_idx:
+  - 0
+  - 842
+med_class_idx:
+  - 842
+  - 4543
+tail_class_idx:
+  - 4543
+  - 8142
+
+# Train
+
+lr: 0.1
+batch_size: 640
+weight_decay: 1e-4
+num_epochs: 200
+momentum: 0.9
+cos: True
+alpha: 0.2
+
+
+
