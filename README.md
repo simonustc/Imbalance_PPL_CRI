@@ -34,9 +34,9 @@ datasets
 
 getting the txt files from [data_txt file Link](https://drive.google.com/drive/folders/1ssoFLGNB_TM-j4VNYtgx9lxfqvACz-8V?usp=sharing)
 
-For CRI+PPW+PPmix, change the `data_path` in `config/.../.yaml`;
+For CRI+PPL, change the `data_path` in `config/.../.yaml`;
 
-For CRI+PPW#, change the `data_loader:{data_dir} in `./config/...json`.
+For CRI+PPW+RIDE, change the `data_loader:{data_dir} in `./config/...json`.
 
 
 ## Training
